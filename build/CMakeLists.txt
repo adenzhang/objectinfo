@@ -78,3 +78,19 @@ set( SRC
 
 add_executable( test_Indexer ${SRC} )
 target_link_libraries(test_Indexer ${LIBS})
+
+set( SRC
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/test_ObjectInfo.cpp"
+)
+
+add_executable( test_ObjectInfo ${SRC} )
+target_link_libraries(test_ObjectInfo ${LIBS})
+
+set( SRC
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/test_FiniteStateMachine.cpp"
+)
+
+add_executable( test_FiniteStateMachine ${SRC} )
+target_link_libraries(test_FiniteStateMachine ${LIBS})
+
+
