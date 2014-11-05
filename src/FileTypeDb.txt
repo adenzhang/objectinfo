@@ -1,0 +1,7 @@
+1 .txt
+2 .xml
+3 .exe
+4 .doc
+5 .xls
+6 .ppt
+20 .log
