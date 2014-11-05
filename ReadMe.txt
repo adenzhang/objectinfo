@@ -8,6 +8,8 @@ Email: adenzh@gmail.com
 
 building system: ubuntu 14.04 installed with boost_1.54 and cmake
 
+if add definition _UNICODE in CMakeList.txt, Indexer project will be built with unicode.
+
 
 === Project Indexer ====
 Functionalities: Index different file types. The file types are configurable in FileTypeDb.txt. 

@@ -20,6 +20,7 @@ else()
 endif()
 message("*** ${ARCH}/${BUILDTYPE} ***")
 
+
 # boost libraries
 set (BOOST_LIBS system filesystem date_time thread)
 
@@ -49,7 +50,8 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)  
 set(Boost_USE_STATIC_RUNTIME OFF) 
 
-add_definitions( -DBOOST_ALL_DYN_LINK -std=c++11)
+add_definitions( -DBOOST_ALL_DYN_LINK -std=c++11 )
+add_definitions( -D_UNICODE )
 
 LINK_DIRECTORIES(${LIBPATHS})
 
@@ -76,19 +78,3 @@ set( SRC
 
 add_executable( test_Indexer ${SRC} )
 target_link_libraries(test_Indexer ${LIBS})
-
-set( SRC
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/test_ObjectInfo.cpp"
-)
-
-add_executable( test_ObjectInfo ${SRC} )
-target_link_libraries(test_ObjectInfo ${LIBS})
-
-
-set( SRC
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/test_FiniteStateMachine.cpp"
-)
-
-add_executable( test_FiniteStateMachine ${SRC} )
-target_link_libraries(test_FiniteStateMachine ${LIBS})
-

@@ -24,12 +24,12 @@ namespace jz{
 	}
 	int Indexer::handlefile(boost::filesystem::path& p) {
 		int n = 0;
-		String ext = p.extension().c_str();
+		String ext = p.extension().generic_string<String>();
 		//ext = transform(ext.begin(), ext.end(), std::tolower());
 		IndexedFileMap::iterator it = _indexedFiles.find(ext);
 		if( it != _indexedFiles.end()) {
 			path abspath = absolute(p);
-			it->second.push_back(FileDef(abspath.c_str(), file_size(p), it->first.type));
+			it->second.push_back(FileDef(abspath.generic_string<String>(), file_size(p), it->first.type));
 			n = 1;
 		}
 		return n;
@@ -48,7 +48,7 @@ namespace jz{
 						if( is_regular_file(subpath) )
 							n += handlefile(subpath);
 						else
-							n += addDirectory(it->path().c_str(), dirlevel-1);
+							n += addDirectory(it->path().generic_string<String>(), dirlevel-1);
 					}
 				}
 

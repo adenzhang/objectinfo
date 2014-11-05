@@ -85,7 +85,7 @@ namespace jz{
 		int load();
 		// @return number of record saved
 		int save();
-		String _dbName;
+		std::string _dbName;
 	public:
 
 		static FileTypeStore& getInstance();

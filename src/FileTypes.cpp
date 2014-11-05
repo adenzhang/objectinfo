@@ -5,7 +5,7 @@ using namespace std;
 #define ADD_FILETYPE(type) add(FileTypeInfo( _T(".")_T(#type), type))
 namespace jz{
 
-	FileTypeStore::FileTypeStore() : _dbName(_T("FileTypeDb.txt")) {
+	FileTypeStore::FileTypeStore() : _dbName(("FileTypeDb.txt")) {
 		init();
 	}
 	FileTypeStore::~FileTypeStore() {
